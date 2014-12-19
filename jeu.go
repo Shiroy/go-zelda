@@ -22,6 +22,7 @@ func (j *Jeu) Run() {
 
 	for j.window.Closed() == false {
 		j.window.ProcessEvents()
+		j.window.Display()
 	}
 }
 
