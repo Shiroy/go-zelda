@@ -10,14 +10,14 @@ func CreateJeu() Jeu {
 	return Jeu{}
 }
 
-func (j Jeu) Initialiser() {
+func (j *Jeu) Initialiser() {
 	fmt.Println("Initialisation")
 
 	j.window = MakeFenetre(800, 600, "Zelda !")
 	j.window.Creer()
 }
 
-func (j Jeu) Run() {
+func (j *Jeu) Run() {
 	fmt.Println("En cours...")
 
 	for j.window.Closed() == false {
@@ -25,7 +25,7 @@ func (j Jeu) Run() {
 	}
 }
 
-func (j Jeu) Eteindre() {
+func (j *Jeu) Eteindre() {
 	fmt.Println("Fermeture du jeu")
 
 	j.window.w.Destroy()
