@@ -5,8 +5,10 @@ import "fmt"
 func main() {
 	fmt.Println("Hello world !")
 
-	jeu := Jeu{}
+	var jeu = CreateJeu()
+
 	jeu.Initialiser()
+	defer jeu.Eteindre()
+
 	jeu.Run()
-	jeu.Eteindre()
 }
